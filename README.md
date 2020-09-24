@@ -31,8 +31,7 @@ $ npm install
 $ npm start
 ```
 ## Other info
-https://miro.com/app/board/o9J_km6vgEM=/
-https://excalidraw.com/#json=6486035038994432,laQZVzgoGYaXVhlQ4bKyYw
+
 ## Contributing
 I want to thank all my teammates, we have really been a great team, helping and supporting us at all times. Of course, thanks also to the teachers and Skylab Coders Academy.
 ## Author
