@@ -8,6 +8,7 @@ const ButtonYellow = ({ product }) => {
     const { user, isAuthenticated, isLoading } = useAuth0();
     const [userMongo, setUserMongo] = useState();
     const [tooggle, setTooggle] = useState(false);
+    const [check, setCheck] = useState(false);
 
     async function onSubmit() {
         (async function updateUser(){
@@ -43,16 +44,26 @@ const ButtonYellow = ({ product }) => {
 
     return (
         <>
-            <div className="button-add__bck">           
-                <button 
-                className="button-add__yellow"
-                onClick={(event) => {
-                    event.preventDefault();
-                    onSubmit(userMongo, product)} 
+            <div className="button-add__bck">  
+                {!check &&         
+                    <button 
+                    className="button-add__yellow"
+                    onClick={(event) => {
+                        event.preventDefault();
+                        onSubmit(userMongo, product);
+                        setCheck(true);
+                    }}
+                    >
+                        afegeix
+                    </button>
                 }
-                >
-                    afegeix
-                </button>
+                {check &&         
+                    <button 
+                    className="button-add__black"
+                    >
+                        ja ho tens!
+                    </button>
+                }
             </div>
         </>
     );

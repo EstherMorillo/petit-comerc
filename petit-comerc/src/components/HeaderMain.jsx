@@ -2,19 +2,28 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import productStore from '../stores/productStore';
+import userStore from '../stores/userStore';
 import { loadStores } from '../actions/storeActions';
+import { loadUserBySub } from '../actions/userActions';
 import './header.scss';
 
-const HeaderMain = ({ click, userCartNumber }) => {
+const HeaderMain = ({ click }) => {
     const { user, isAuthenticated, isLoading } = useAuth0();
+    const [userMongo, setUserMongo] = useState();
     const { logout } = useAuth0();
     const [stores, setStores] = useState(productStore.getStores());
-    const [numberCart, setNumberCart] = useState(userCartNumber);
 
     useEffect(() => {
         productStore.addChangeListener(onChange);
 
         if (stores.length === 0) loadStores();
+
+        if (isAuthenticated && !userMongo) {
+            (async function asyncLoad() {
+                await loadUserBySub(user.sub);
+                setUserMongo(userStore.getUser());
+            })();
+        } 
 
         return () => productStore.removeChangeListener(onChange);
     }, [stores.length]);
@@ -124,7 +133,11 @@ const HeaderMain = ({ click, userCartNumber }) => {
 
                     </div>
                 <Link to="/" className="nav__logo"></Link>
-                <Link to="/cart" className="nav__cart"></Link>
+                <Link to="/cart" className="nav__cart">
+                    {userMongo?.cart.length > 0 &&
+                        <div className="nav__cart-number">{userMongo?.cart.length}</div>
+                    }
+                </Link>
                 </div>
         
             </section>

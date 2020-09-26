@@ -65,7 +65,8 @@
    height: 50px;
    background-position: center;
    background-size: 2.5em;
-   background-repeat: no-repeat
+   background-repeat: no-repeat;
+   position: relative;
 }
 
 .nav__arrow {
@@ -170,3 +171,16 @@
    .icon__twitter:hover {
       background-image: url(../assets/icons/twitter.svg);
    }
+
+.nav__cart-number {
+   position: absolute;
+   background-color: #fc3;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   text-decoration: none;
+   color: #fff;
+   text-align: center;
+   line-height: 22px;
+   font-size: .8rem;
+}
