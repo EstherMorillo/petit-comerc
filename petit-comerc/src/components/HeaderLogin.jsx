@@ -8,7 +8,6 @@ import './header.scss';
 const HeaderLogin = () => {
     const { user, isAuthenticated, isLoading } = useAuth0();
     const [userMongo, setUserMongo] = useState();
-    const [cartClick, setCartClick] = useState();  
 
     useEffect(() => {
         userStore.addChangeListener(onChange);
