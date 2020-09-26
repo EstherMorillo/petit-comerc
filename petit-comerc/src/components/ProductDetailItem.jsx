@@ -12,9 +12,11 @@ const ProductDetailItem = ({
     price,
     currentPrice,
     sizes,
-    description
+    description,
+    click
 }) => {
-   
+
+  
     return (
         <>
             <section className="detail-container">

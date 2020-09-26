@@ -1,7 +1,7 @@
 import {
     EventEmitter
 } from "events";
-import dispatcher from "../appDispatcher";
+import dispatcher from "../dispatcher";
 import actionTypes from "../actions/actionTypes";
 
 const CHANGE_EVENT = "change";

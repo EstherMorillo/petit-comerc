@@ -12,8 +12,8 @@ function ProductDetail(props) {
     const urlProductId = props.match.params.productId;
     const [product, setProduct] = useState(productStore.getProduct());
     const { user, isAuthenticated, isLoading } = useAuth0();
-    const [userMongo, setUserMongo] = useState();
-    
+    const [userMongo, setUserMongo] = useState();    
+    const [cartClick, setCartClick] = useState();    
     
     useEffect(() => {
         productStore.addChangeListener(onChange);
@@ -33,13 +33,14 @@ function ProductDetail(props) {
         }
     
         return () => userStore.removeChangeListener(onChange);
-    });
+    }, [cartClick]);
     
 
     function onChange() {
         setProduct(productStore.getProduct());
         setUserMongo(userStore.getUser());
     }
+
 
     return (
         <>

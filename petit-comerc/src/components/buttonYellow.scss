@@ -11,9 +11,9 @@
     bottom: 0;
 }
 
-.button-add__yellow {
+.button-add__yellow,
+.button-add__black {
     display: inline-block;
-    background-color: #fc3;
     outline: none;
     color: #fff;
     border: none;
@@ -27,3 +27,19 @@
     padding-top: .2rem;
     cursor: pointer;
 }
+
+.button-add__yellow {
+    background-color: #fc3;
+}
+
+    .button-add__yellow:hover {
+        background-color: #f7bb08;
+    }
+
+.button-add__black {
+    background-color: #000;
+}
+
+    .button-add__black:hover {
+        background-color: #333;
+    }
