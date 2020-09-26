@@ -21,7 +21,7 @@ const HeaderLogin = () => {
         } 
 
         return () => userStore.removeChangeListener(onChange);
-    }, [userMongo?.cart.length]);
+    }, [user, userMongo?.cart.length]);
 
     function onChange() {
         setUserMongo(userStore.getUser())
