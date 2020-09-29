@@ -1,10 +1,10 @@
-import dispatcher from '../appDispatcher';
+import dispatcher from '../dispatcher';
 import { loadStores, registerStore, deleteStore, updateStore } from './storeActions';
 import axios from 'axios';
 
 jest.dontMock('./storeActions');
 jest.mock('axios');
-jest.mock('../appDispatcher');
+jest.mock('../dispatcher');
 
 describe('Store Actions', () => {
     afterEach(() => {
@@ -36,12 +36,14 @@ describe('Store Actions', () => {
 
     it('should call PUT', async () => {
         const dataStore = {
-            storeId: '111',
+            storeId: {
+                _id: '111'
+            },
             storeName: 'Melicotó'
         }
-        const storeId = dataStore.storeId;
+        const storeId = dataStore.storeId._id;
 
-        axios.post.mockReturnValue(new Promise((resolve) => resolve({data: {}})));
+        axios.post.mockReturnValue(new Promise((resolve) => resolve({store: {}})));
         await updateStore(dataStore);
         const putCall = axios.put.mock.calls[0][0];
         expect(putCall).toEqual(`/api/stores/${storeId}`, dataStore);

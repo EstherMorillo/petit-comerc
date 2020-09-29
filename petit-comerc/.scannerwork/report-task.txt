@@ -2,5 +2,5 @@ projectKey=Petit-Comerc_frontend
 serverUrl=http://localhost:9000
 serverVersion=8.4.0.35506
 dashboardUrl=http://localhost:9000/dashboard?id=Petit-Comerc_frontend
-ceTaskId=AXTRcA3YFA-v1YsBP8aT
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXTRcA3YFA-v1YsBP8aT
+ceTaskId=AXTZU35SXO1Gi6c0DSy-
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXTZU35SXO1Gi6c0DSy-

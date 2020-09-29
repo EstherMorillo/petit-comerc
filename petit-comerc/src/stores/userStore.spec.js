@@ -1,5 +1,5 @@
 import userStore from './userStore';
-import dispatcher from '../appDispatcher';
+import dispatcher from '../dispatcher';
 import actionTypes from '../actions/actionTypes';
 
 describe('User Store', () => {

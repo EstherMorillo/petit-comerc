@@ -1,10 +1,10 @@
-import dispatcher from '../appDispatcher';
+import dispatcher from '../dispatcher';
 import { loadUserBySub, createUser, addProductCart, deleteProductCart } from './userActions';
 import axios from 'axios';
 
 jest.dontMock('./userActions');
 jest.mock('axios');
-jest.mock('../appDispatcher');
+jest.mock('../dispatcher');
 
 describe('User Actions', () => {
     afterEach(() => {

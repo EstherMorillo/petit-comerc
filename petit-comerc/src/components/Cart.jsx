@@ -60,7 +60,7 @@ function Cart() {
                             user={userMongo?.sub}
                             image={cart.image}
                             name={cart.productName}
-                            price={cart.price}
+                            currentPrice={cart.currentPrice}
                             onDeleteToCart={deleteCart}
                         />
                     ))

@@ -47,7 +47,7 @@ const HeaderMain = ({ click }) => {
                                         event.preventDefault()
                                         click('Todos')}}
                                             className="menuToggle__link">
-                                        <li>Todos</li>
+                                        <li>Tots</li>
                                     </Link>
                                     <Link onClick={(event) => {
                                         event.preventDefault()

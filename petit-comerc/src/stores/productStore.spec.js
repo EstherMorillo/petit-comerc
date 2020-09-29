@@ -1,5 +1,5 @@
 import productStore from './productStore';
-import dispatcher from '../appDispatcher';
+import dispatcher from '../dispatcher';
 import actionTypes from '../actions/actionTypes';
 
 function reduceAction(action, data) {

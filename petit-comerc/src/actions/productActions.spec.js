@@ -1,10 +1,10 @@
-import dispatcher from '../appDispatcher';
+import dispatcher from '../dispatcher';
 import { loadProducts, createProduct, loadProduct } from './productActions';
 import axios from 'axios';
 
 jest.dontMock('./storeActions');
 jest.mock('axios');
-jest.mock('../appDispatcher');
+jest.mock('../dispatcher');
 
 describe('Product Actions', () => {
     afterEach(() => {
